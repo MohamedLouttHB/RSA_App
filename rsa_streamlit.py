@@ -97,6 +97,8 @@ if (gen_choix == 'Automatiquement') :
     col5.write(f"clé publique = {se}")
     col6.write(f"clé privé = {sd}")
 
+    st.warning("ces clefs sont générés automatiquement , lorsque vous actualisez la page, ils seront changés")
+
 
     txt = st.text_area('Entrer un message')
     txt_msg =  [ord(ch) for ch in txt]
@@ -118,6 +120,7 @@ if (gen_choix == 'Automatiquement') :
 
     if(dechiffre):
         st.success(s_clear_text)
+
 
 
 
