@@ -25,7 +25,7 @@ with st.sidebar:
     st.write("6 - Crypter le message avec le clé public du destinataire")
     st.write("7 - Decrypter le message avec le clé privé du destinataire")
     image = Image.open('rsa.jpeg')
-    st.image(image, caption=' Guide RSA')
+    st.image(image, caption=' Fonctionnement RSA')
     st.write('**_:blue[Made by] :red[Mohamed Loutt Horma Babana]_**')
 
 gen_choix = st.radio("**:red[Comment voulez vous genérer les clefs ?]**",('Automatiquement','Manuellement'), horizontal=True)
@@ -51,6 +51,7 @@ if (gen_choix == 'Manuellement') :
     else :
         st.error("p et q doit etre premier")
 
+    st.divider()
 
     txtm = st.text_area('Entrer un message')
     txt_msgm =  [ord(ch) for ch in txtm]
@@ -96,10 +97,9 @@ if (gen_choix == 'Automatiquement') :
     col4.write(f"ϕ(n) = {sphi}")
     col5.write(f"clé publique = {se}")
     col6.write(f"clé privé = {sd}")
+    st.warning("Tous ces valeurs sont générés automatiquement, si vous actualisez la page, ils seront changés")
 
-    st.warning("ces clefs sont générés automatiquement , lorsque vous actualisez la page, ils seront changés")
-
-
+    st.divider()
     txt = st.text_area('Entrer un message')
     txt_msg =  [ord(ch) for ch in txt]
 
