@@ -26,6 +26,7 @@ with st.sidebar:
     st.write("7 - Decrypter le message avec le clé privé du destinataire")
     image = Image.open('rsa.jpeg')
     st.image(image, caption=' Fonctionnement RSA')
+    st.write("_:red[code source :]_ https://github.com/MohamedLouttHB/RSA_App")
     st.write('**_:blue[Made by] :red[Mohamed Loutt Horma Babana]_**')
 
 gen_choix = st.radio("**:red[Comment voulez vous genérer les clefs ?]**",('Automatiquement','Manuellement'), horizontal=True)
@@ -67,7 +68,7 @@ if (gen_choix == 'Manuellement') :
         encrypt = st.button('🔒 Chiffré')
 
     with col2:
-        decrypt = st.button('🔓 Déchiffré')
+        decrypt = st.button('🔑 Déchiffré')
 
     if(encrypt):
         st.error(s_cipher_textm)
@@ -113,7 +114,7 @@ if (gen_choix == 'Automatiquement') :
         chiffre = st.button('🔒 Chiffré')
 
     with col2:
-        dechiffre = st.button('🔓 Déchiffré')
+        dechiffre = st.button('🔑 Déchiffré')
 
     if(chiffre):
         st.error(s_cipher_text)

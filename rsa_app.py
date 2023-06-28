@@ -40,8 +40,7 @@ cipher_text = [pow(m,e,n) for m in message ]
 
 decryt_msg = [pow(c,d,n) for c in cipher_text ]
 clear_text = "".join(chr(ch) for ch in decryt_msg)
-print(cipher_text)
-print(clear_text)
+
 
 #Affichage des infos
 
@@ -52,21 +51,5 @@ print(clear_text)
 #print("Phi  :", phi)
 #print("e:", e)
 #print("d:", d)
-
-'''   
-   mp = generer_nombre_premier()
-   mq = generer_nombre_premier()
-
-   # n et Phi
-   mn = mp * mq
-   mphi = (mp - 1) * (mq - 1)
-
-   me = generer_cle_publique()
-   md = sympy.mod_inverse(me, mphi)
-
-    if not (sympy.isprime(p_input)):
-        st.error("p doit étre un nombre premier !")
-    if not (sympy.isprime(q_input)):
-        st.error("q doit étre un nombre premier !")
-
-   '''
+#print(cipher_text)
+#print(clear_text)
