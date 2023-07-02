@@ -1,7 +1,7 @@
 import streamlit as st
 import math
 import sympy
-from main import generer_nombre_premier, generer_cle_publique
+from rsa_app import generer_nombre_premier, generer_cle_publique
 from PIL import Image
 
 # Set Streamlit page configuration
@@ -38,8 +38,25 @@ with st.sidebar:
     st.write("5 - Calcul du clé privé :red[_d_] tq : :red[_e.d ≡ 1 mod n_]")
     image = Image.open('rsa.jpeg')
     st.image(image, caption=' Fonctionnement RSA')
-    st.write("_:red[code source :]_ https://github.com/MohamedLouttHB/RSA_App")
+    st.markdown("<br>",unsafe_allow_html=True)
+
+    st.markdown(
+        "<a href='https://github.com/MohamedLouttHB/RSA_App'><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' height='40' width='40'></a> [    code source](https://github.com/MohamedLouttHB/RSA_App)",
+        unsafe_allow_html=True)
+    st.markdown("<br>",unsafe_allow_html=True)
     st.write('**_:blue[Made by]_ :violet[Mohamed Loutt Horma Babana]**')
+    #elargir sidebar
+    st.markdown(
+        """
+        <style>
+        .sidebar .sidebar-content {
+            width: 300px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
 
 # Function to encrypt the message and cache the result
 @st.cache_data
