@@ -124,7 +124,7 @@ if gen_choix == 'Manuellement':
             try:
                 if(key_priv == str(md)):
                     st.write("Le message déchiffré est : ")
-                    st.success(s_clear_textm)
+                    st.success(s_clear_textm, icon="📨")
                 else:
                     st.error("Clé incorrect !")
             except:
