@@ -190,3 +190,14 @@ if gen_choix == 'Automatiquement':
 
             else:
                 st.error('Clé incorrecte !')
+
+
+#Cacher les logos de streamlit
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
