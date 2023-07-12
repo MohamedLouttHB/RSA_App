@@ -8,6 +8,7 @@ from PIL import Image
 st.set_page_config(
     page_title="RSA Algorithm App",
     page_icon="🔐",
+    layout='wide'
 )
 
 # Store initial variables in the Streamlit session state
@@ -103,7 +104,7 @@ if gen_choix == 'Manuellement':
 
     col1, col2 = st.columns(2)
     with col1:
-        txtm = st.text_area('Entrer un message')
+        txtm = st.text_area('Entrer un message à chiffré')
         txt_msgm = [ord(ch) for ch in txtm]
         s_cipher_textm = [pow(sm, e_input, mn) for sm in txt_msgm]
         s_decrypt_textm = [pow(sm, md, mn) for sm in s_cipher_textm]
@@ -117,7 +118,7 @@ if gen_choix == 'Manuellement':
                 st.error("Vérifier la validité des valeurs !")
 
     with col2:
-        key_priv = st.text_area("Entrer votre clé privé")
+        key_priv = st.text_area("Entrer votre clé privé pour déchiffré le message")
         decrypt = st.button('🔑 Déchiffré')
 
         if (decrypt):
